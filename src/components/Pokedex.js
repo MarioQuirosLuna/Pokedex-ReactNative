@@ -3,7 +3,7 @@ import { Text, View, FlatList, StyleSheet, SafeAreaView } from 'react-native';
 import { percentageWidth as pw, percentageHeight as ph } from 'react-native-responsive-dimension';
 import Pagination from './Pagination';
 import Pokemon from './Pokemon';
-//import Loading from './Loading';
+import Loading from './Loading';
 
 
 const Pokedex = (props) => {
@@ -31,8 +31,7 @@ const Pokedex = (props) => {
                 />
             </View>
             {loading ?
-                // <Loading />
-                <View></View>
+                <Loading />
                 :
                 <SafeAreaView style={styles.containerPokedex}>
                     <FlatList
