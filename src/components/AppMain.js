@@ -10,6 +10,7 @@ import { FavoriteProvider } from '../context/favoriteContext';
 import Navbar from './Navbar';
 import Searchbar from './Searchbar';
 import Pokedex from './Pokedex';
+import NotFoundPage from './NotFound';
 
 const localStorageKey = 'favorite_pokemon';
 
@@ -106,7 +107,6 @@ const AppMain = () => {
                     }
                 </View>
             </FavoriteProvider>
-
         </View>
     );
 }
