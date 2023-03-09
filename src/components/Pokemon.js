@@ -115,10 +115,8 @@ const styles = StyleSheet.create({
     pokemonHeartBtn: {
         width: pw(10),
         height: ph(5),
-        backgroundColor: '#ddd',
+        backgroundColor: '#2196F3',
         borderRadius: 5,
-        borderWidth: 1,
-        borderColor: '#aaa',
         overflow: 'hidden',
         margin: pw(1),
     },
