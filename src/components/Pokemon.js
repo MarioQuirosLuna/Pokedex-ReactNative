@@ -1,8 +1,8 @@
 import React, { useContext, useState } from 'react';
-import { View, Text, Image, Button, StyleSheet, FlatList } from 'react-native';
+import { View, Text, Image, Button, StyleSheet, TouchableOpacity, FlatList } from 'react-native';
 import { percentageWidth as pw, percentageHeight as ph } from 'react-native-responsive-dimension';
 import FavoriteContext from '../context/favoriteContext';
-//import ModalPokemon from './ModalPokemon';
+import ModalPokemon from './ModalPokemon';
 import GlobalStyles from '../style/globalStyles';
 
 
@@ -32,11 +32,12 @@ const Pokemon = (props) => {
     return (
         <View style={[styles.pokemonCard, { backgroundColor: GlobalStyles(pokemon.types[0].type.name) }]} >
             <View style={styles.pokemonImgContainer}>
-                <Image
-                    style={styles.pokemonImg}
-                    source={{ uri: pokemon.sprites.front_default }}
-                    onPress={showDetails}
-                />
+                <TouchableOpacity onPress={showDetails}>
+                    <Image
+                        style={styles.pokemonImg}
+                        source={{ uri: pokemon.sprites.front_default }}
+                    />
+                </TouchableOpacity>
             </View>
             {show ?
                 <ModalPokemon pokemon={pokemon} />
@@ -91,7 +92,7 @@ const styles = StyleSheet.create({
         borderRadius: 5,
     },
     cardBody: {
-        width: pw(40),
+        width: pw(45),
         paddingHorizontal: 0,
         paddingVertical: 15,
         justifyContent: 'space-around',

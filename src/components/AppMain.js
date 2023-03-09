@@ -114,6 +114,7 @@ const AppMain = () => {
 
 const styles = StyleSheet.create({
     container: {
+        marginTop: ph(3),
         minHeight: ph(100),
         backgroundColor: '#dfdfdf',
     },
