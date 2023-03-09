@@ -8,6 +8,7 @@ import { FavoriteProvider } from '../context/favoriteContext';
 
 import Navbar from './Navbar';
 import Searchbar from './Searchbar';
+import Pokedex from './Pokedex';
 
 const localStorageKey = 'favorite_pokemon';
 
@@ -97,7 +98,11 @@ const AppMain = () => {
                 <Navbar />
                 <View>
                     <Searchbar onSearch={onSearch} />
-
+                    {notFound ?
+                        (<NotFound />)
+                        :
+                        (<Pokedex loading={loading} pokemons={pokemons} page={page} setPage={setPage} total={total} />)
+                    }
                 </View>
             </FavoriteProvider>
 
