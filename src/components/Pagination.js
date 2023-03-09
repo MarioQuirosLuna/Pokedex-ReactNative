@@ -6,12 +6,12 @@ const Pagination = (props) => {
     return (
         <View style={styles.pagination}>
             <Button
-                onClick={onLeftClick}
+                onPress={onLeftClick}
                 title="➖"
             />
             <Text>{page} to {totalPages}</Text>
             <Button
-                onClick={onRightClick}
+                onPress={onRightClick}
                 title="➕"
             />
         </View>

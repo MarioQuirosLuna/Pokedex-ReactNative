@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { percentageWidth as pw, percentageHeight as ph } from 'react-native-responsive-dimension';
 
 import { searchPokemon, getPokemons, getPokemonData } from '../data/api';
 import { FavoriteProvider } from '../context/favoriteContext';
@@ -99,7 +100,7 @@ const AppMain = () => {
                 <View>
                     <Searchbar onSearch={onSearch} />
                     {notFound ?
-                        (<NotFound />)
+                        (<NotFoundPage />)
                         :
                         (<Pokedex loading={loading} pokemons={pokemons} page={page} setPage={setPage} total={total} />)
                     }
@@ -113,7 +114,8 @@ const AppMain = () => {
 
 const styles = StyleSheet.create({
     container: {
-        minHeight: '100%',
+        marginTop: ph(4),
+        minHeight: ph(100),
         backgroundColor: '#dfdfdf',
     },
 });

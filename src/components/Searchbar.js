@@ -3,12 +3,12 @@ import { View, Button, TextInput, StyleSheet } from 'react-native';
 
 const Searchbar = (props) => {
     const { onSearch } = props;
-    const [search, setSearch] = useState("");
+    const [search, setSearch] = useState('');
 
 
     const onChange = (evt) => {
-        setSearch(evt.target.value.toLowerCase());
-        if (evt.target.value.length === 0) {
+        setSearch(evt.toLowerCase());
+        if (evt.length === 0) {
             onSearch(null);
         }
     };
@@ -21,9 +21,8 @@ const Searchbar = (props) => {
         <View style={styles.searchBarContainer}>
             <View style={styles.searchBar}>
                 <TextInput
-                    placeholder="Search"
+                    placeholder='Search'
                     onChangeText={onChange}
-                    value={search}
                     style={styles.searchBarInput}
                 />
             </View>

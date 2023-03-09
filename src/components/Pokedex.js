@@ -1,7 +1,8 @@
 import React from 'react';
 import { Text, View, FlatList, StyleSheet, SafeAreaView } from 'react-native';
+import { percentageWidth as pw, percentageHeight as ph } from 'react-native-responsive-dimension';
 import Pagination from './Pagination';
-//import Pokemon from './Pokemon';
+import Pokemon from './Pokemon';
 //import Loading from './Loading';
 
 
@@ -21,7 +22,7 @@ const Pokedex = (props) => {
     return (
         <View>
             <View style={styles.header}>
-                <Text>Pokedex</Text>
+                <Text style={styles.text}>Pokedex</Text>
                 <Pagination
                     page={page + 1}
                     totalPages={total}
@@ -36,7 +37,7 @@ const Pokedex = (props) => {
                 <SafeAreaView style={styles.containerPokedex}>
                     <FlatList
                         data={pokemons}
-                        renderItem={({ item }) => <Text>{item.name}</Text>}
+                        renderItem={({ item }) => <Pokemon pokemon={item} key={item.name} />}
                         keyExtractor={item => item.name}
                     />
                 </SafeAreaView>
@@ -51,15 +52,15 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         alignItems: 'center',
         padding: 10,
+        marginHorizontal: pw(5),
+    },
+    text: {
+        fontSize: pw(5),
+        fontWeight: 'bold',
     },
     containerPokedex: {
-
-    },
-    pokedexItem: {
-        backgroundColor: '#f9c2ff',
-        padding: 20,
-        marginVertical: 8,
-        marginHorizontal: 16,
+        justifyContent: 'center',
+        marginHorizontal: pw(5),
     },
 });
 

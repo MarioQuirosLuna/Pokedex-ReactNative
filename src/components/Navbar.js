@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { View, Image, Text, StyleSheet } from 'react-native';
+import { percentageWidth as pw, percentageHeight as ph } from 'react-native-responsive-dimension';
 import FavoriteContext from '../context/favoriteContext';
 
 const Navbar = () => {
@@ -20,7 +21,7 @@ const Navbar = () => {
 
 const styles = StyleSheet.create({
     nav: {
-        height: '20%',
+        height: ph(20),
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',
