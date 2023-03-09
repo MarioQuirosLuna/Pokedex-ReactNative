@@ -9,7 +9,7 @@ const Pagination = (props) => {
                 onPress={onLeftClick}
                 title="➖"
             />
-            <Text>{page} to {totalPages}</Text>
+            <Text>  {page} to {totalPages}  </Text>
             <Button
                 onPress={onRightClick}
                 title="➕"
@@ -22,7 +22,8 @@ const styles = StyleSheet.create({
     pagination: {
         flexDirection: 'row',
         alignItems: 'center',
-        justifyContent: 'flex-end',
+        justifyContent: 'space-between',
+        paddingHorizontal: 10,
     }
 });
 
